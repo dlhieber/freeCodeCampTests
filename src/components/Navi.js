@@ -24,8 +24,7 @@ export default class Navi extends Component {
     return (
       <NavPane openLength={200} push color={this.props.color} theme={this.props.theme}>
         {this.renderItem('Random Generator', 'Content 1')}
-        {this.renderItem('Item 2', 'Content 2')}
-        {this.renderItem('Item 3', 'Content 3')}
+        
       </NavPane>
     );
   }
@@ -206,7 +205,7 @@ export default class Navi extends Component {
           <p id="author">- {this.state.aQuote.quoteAuthor}</p>
           <button id="new-quote" onClick={this.randomQuote}>New Quote</button>
           <p>
-          <a href={"twitter.com/intent/tweet?text="+this.state.aQuote.quoteText} id="tweet-quote">Tweet This quote!</a>
+          <a href={"https://twitter.com/intent/tweet?text="+this.state.aQuote.quoteText} id="tweet-quote">Tweet This quote!</a>
           </p>
         </div>)
     }
