@@ -7,12 +7,22 @@ export default class WindowsWindow extends Component {
     color: '#cc7f29',
     theme: 'light'
   };
-
-  render() {
+  constructor(props){
+    super(props);
+    this.state={test:''}
+  }
+  componentDidMount(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     
     const openTest=urlParams.get('test')||'Random Generator';
+
+
+    this.setState({test:openTest});
+    this.forceUpdate();
+  }
+  render() {
+    console.log(this.state.test);
     return (
       <div id="quote-box">
       <Window
@@ -25,7 +35,8 @@ export default class WindowsWindow extends Component {
         
       >
         <TitleBar title="Having Fun with Windows Style React Components" controls/>
-        <Navi test={openTest} theme={this.props.theme} color={this.props.theme === 'dark' ? 'white' : '#333'}/>
+        
+        <Navi test={this.state.test} theme={this.props.theme} color={this.props.theme === 'dark' ? 'white' : '#333'}/>
 
       </Window></div>
     );

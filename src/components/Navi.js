@@ -10,7 +10,6 @@ export default class Navi extends Component {
 
   constructor(props) {
     super();
-    console.log(props.test);
     this.state = {
       selected: props.test,
       aQuote:{
