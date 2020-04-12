@@ -11,8 +11,6 @@ export default class WindowsWindow extends Component {
 
   render() {
 
-    
-
     return (
       <div id="quote-box">
       <Window
