@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Random Quote`,
+    title: `FreeCodeAcademy.org Tests`,
     description: `For FreeCodeAcademy Front-End Project`,
     author: `@gatsbyjs`,
   },

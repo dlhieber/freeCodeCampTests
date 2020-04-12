@@ -4,14 +4,21 @@ import { NavPane, NavPaneItem, Text } from 'react-desktop/windows';
 export default class Navi extends Component {
   static defaultProps = {
     color: '#cc7f29',
-    theme: 'light'
+    theme: 'light',
+   
   };
 
-  constructor() {
+  constructor(props) {
     super();
+    console.log(props.test);
     this.state = {
-      selected: 'Item 1'
+      selected: props.test,
+      aQuote:{
+        quoteText: "He is able who thinks he is able.",
+        quoteAuthor: "Buddha"
+        }
     }
+    this.randomQuote = this.randomQuote.bind(this);
   }
 
   render() {
@@ -37,15 +44,172 @@ export default class Navi extends Component {
         push
       >
         {this.renderTest(this.state.selected)}
-        <Text>{content}</Text>
+        
       </NavPaneItem>
     );
   }
 
+  randomQuote(){
+    let quotes = [{
+      quoteText: "He is able who thinks he is able.",
+      quoteAuthor: "Buddha"
+      }, {
+      quoteText: "Be as you wish to seem.",
+      quoteAuthor: "Socrates"
+      }, {
+      quoteText: "A goal without a plan is just a wish.",
+      quoteAuthor: "Larry Elder"
+      }, {
+      quoteText: "To succeed, we must first believe that we can.",
+      quoteAuthor: "Michael Korda"
+      }, {
+      quoteText: "Learn from yesterday, live for today, hope for tomorrow.",
+      quoteAuthor: "Albert Einstein"
+      }, {
+      quoteText: "A weed is no more than a flower in disguise.",
+      quoteAuthor: "James Lowell"
+      }, {
+      quoteText: "Do, or do not. There is no try.",
+      quoteAuthor: "Yoda"
+      }, {
+      quoteText: "All serious daring starts from within.",
+      quoteAuthor: "Harriet Beecher Stowe"
+      }, {
+      quoteText: "The best teacher is experience learned from failures.",
+      quoteAuthor: "Byron Pulsifer"
+      }, {
+      quoteText: "Think how hard physics would be if particles could think.",
+      quoteAuthor: "Murray Gell-Mann"
+      }, {
+      quoteText: "Love is the flower you've got to let grow.",
+      quoteAuthor: "John Lennon"
+      }, {
+      quoteText: "Don't wait. The time will never be just right.",
+      quoteAuthor: "Napoleon Hill"
+      }, {
+      quoteText: "One fails forward toward success.",
+      quoteAuthor: "Charles Kettering"
+      }, {
+      quoteText: "Time is the wisest counsellor of all.",
+      quoteAuthor: "Pericles"
+      }, {
+      quoteText: "You give before you get.",
+      quoteAuthor: "Napoleon Hill"
+      }, {
+      quoteText: "Wisdom begins in wonder.",
+      quoteAuthor: "Socrates"
+      }, {
+      quoteText: "Without courage, wisdom bears no fruit.",
+      quoteAuthor: "Baltasar Gracian"
+      }, {
+      quoteText: "Change in all things is sweet.",
+      quoteAuthor: "Aristotle"
+      }, {
+      quoteText: "What you fear is that which requires action to overcome.",
+      quoteAuthor: "Byron Pulsifer"
+      }, {
+      quoteText: "The best teacher is experience learned from failures.",
+      quoteAuthor: "Byron Pulsifer"
+      }, {
+      quoteText: "When performance exceeds ambition, the overlap is called success.",
+      quoteAuthor: "Cullen Hightower"
+      }, {
+      quoteText: "When deeds speak, words are nothing.",
+      quoteAuthor: "African proverb"
+      }, {
+      quoteText: "Real magic in relationships means an absence of judgement of others.",
+      quoteAuthor: "Wayne Dyer"
+      }, {
+      quoteText: "When performance exceeds ambition, the overlap is called success.",
+      quoteAuthor: "Cullen Hightower"
+      }, {
+      quoteText: "I never think of the future. It comes soon enough.",
+      quoteAuthor: "Albert Einstein"
+      }, {
+      quoteText: "Skill to do comes of doing.",
+      quoteAuthor: "Ralph Emerson"
+      }, {
+      quoteText: "Wisdom is the supreme part of happiness.",
+      quoteAuthor: "Sophocles"
+      }, {
+      quoteText: "I believe that every person is born with talent.",
+      quoteAuthor: "Maya Angelou"
+      }, {
+      quoteText: "Important principles may, and must, be inflexible.",
+      quoteAuthor: "Abraham Lincoln"
+      }, {
+      quoteText: "The undertaking of a new action brings new strength.",
+      quoteAuthor: "Richard Evans"
+      }, {
+      quoteText: "I believe that every person is born with talent.",
+      quoteAuthor: "Maya Angelou"
+      }, {
+      quoteText: "The years teach much which the days never know.",
+      quoteAuthor: "Ralph Emerson"
+      }, {
+      quoteText: "Our distrust is very expensive.",
+      quoteAuthor: "Ralph Emerson"
+      }, {
+      quoteText: "All know the way; few actually walk it.",
+      quoteAuthor: "Bodhidharma"
+      }, {
+      quoteText: "Great talent finds happiness in execution.",
+      quoteAuthor: "Johann Wolfgang von Goethe"
+      }, {
+      quoteText: "Faith in oneself is the best and safest course.",
+      quoteAuthor: "Michelangelo"
+      }, {
+      quoteText: "Courage is going from failure to failure without losing enthusiasm.",
+      quoteAuthor: "Winston Churchill"
+      }, {
+      quoteText: "The two most powerful warriors are patience and time.",
+      quoteAuthor: "Leo Tolstoy"
+      }, {
+      quoteText: "Anticipate the difficult by managing the easy.",
+      quoteAuthor: "Lao Tzu"
+      }, {
+      quoteText: "Those who are free of resentful thoughts surely find peace.",
+      quoteAuthor: "Buddha"
+      }, {
+      quoteText: "Talk doesn't cook rice.",
+      quoteAuthor: "Chinese proverb"
+      }, {
+      quoteText: "A short saying often contains much wisdom.",
+      quoteAuthor: "Sophocles"
+      }, {
+      quoteText: "The day is already blessed, find peace within it.",
+      quoteAuthor: ""
+      }, {
+      quoteText: "It takes both sunshine and rain to make a rainbow.",
+      quoteAuthor: ""
+      }, {
+      quoteText: "A beautiful thing is never perfect.",
+      quoteAuthor: ""
+      }, {
+      quoteText: "Only do what your heart tells you.",
+      quoteAuthor: "Princess Diana"
+      }, {
+      quoteText: "Life is movement-we breathe, we eat, we walk, we move!",
+      quoteAuthor: "John Pierrakos"
+      }];
+    let randomNum= Math.round( Math.random() *quotes.length);
+    
+    this.setState({aQuote:quotes[randomNum]});
+  }
   renderTest(title){
     switch(title){
       case 'Random Generator':
-        return(<p>other JSX</p>)
+        
+        return(
+         
+        <div>
+          <p id="text">{this.state.aQuote.quoteText}</p>
+          <p id="author">- {this.state.aQuote.quoteAuthor}</p>
+          <button id="new-quote" onClick={this.randomQuote}>New Quote</button>
+          <p>
+          <a href={"twitter.com/intent/tweet?text="+this.state.aQuote.quoteText} id="tweet-quote">Tweet This quote!</a>
+          </p>
+        </div>)
     }
     return(<p>Some JSX</p>)
   }

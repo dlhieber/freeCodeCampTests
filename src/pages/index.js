@@ -8,10 +8,10 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
   
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      
-    </div>
-    <WindowsWindow />
+  
+  
+
+    <WindowsWindow /> 
   </Layout>
 )
 
